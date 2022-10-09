@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find reconfigurable_tf)/rviz/test_output.rviz" respawn="true" />
+    <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" />
+
+    <node pkg="reconfigurable_tf" type="reconfigurable_tf_publisher" name="reconfigurable_tf_publisher" output="screen">
+        <param name="parent_frame" value="map" />
+        <param name="child_frame" value="tf1" />
+    </node>
+
+    <node pkg="reconfigurable_tf" type="reconfigurable_tf_publisher" name="map" output="screen">
+        <param name="parent_frame" value="map" />
+        <param name="child_frame" value="tf2" />
+    </node>
+
+</launch>
