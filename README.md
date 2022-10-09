@@ -12,9 +12,16 @@ To install this package simply clone this repo to your catkin workspace and buil
 
 Below is a sample of the launch file to run this node, the params 'parent_frame' and 'child_frame' must be provided or the node will exit. 
 Once launched the transforms can be adjusted using your parameter adjustment method of choice. 
-```    
+The node allows the configuration of XYZ translation values and Roll-Pitch-Yaw orientation.
+```
 <node pkg="reconfigurable_tf" type="reconfigurable_tf_publisher" name="reconfigurable_tf_publisher" output="screen">
     <param name="parent_frame" value="map" />
     <param name="child_frame" value="tf1" />
-</node>```
+</node>
+```
 
+An example launch file is provided for a quick demo: 
+
+```
+roslaunch reconfigurable_tf reconfigurable_tf.launch 
+```
